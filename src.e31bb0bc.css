@@ -1537,7 +1537,6 @@ button#slick-slide-control02 {
     width: 100%;
     padding-top: 139px;
     padding-bottom: 139px;
-    background-color: #ffffff;
     background-image: url("/sectionbg1.2295bd22.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -1740,11 +1739,6 @@ button#slick-slide-control02 {
   margin-right: auto;
   padding-bottom: 97px;
   background-color: #fff5f6;
-}
-@media screen and (min-width: 1200px) {
-  .advantages {
-    background-color: #ffffff;
-  }
 }
 
 .advantages-list {
