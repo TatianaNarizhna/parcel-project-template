@@ -92,7 +92,7 @@
     }
 
     &-main {
-      width: 218px;
+      min-width: 218px;
       margin-top: 137px;
       @media screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
         width: 162px;
@@ -220,6 +220,7 @@
   &-him {
     background-color: $header-link-bg;
     color: $header-him-link-color;
+    // width: 100%;
 
     &:hover,
     &:focus {
@@ -229,7 +230,7 @@
     @media screen and (min-width: $desktop-width) {
       font-family: DM Sans;
       font-size: 14px;
-      line-height: 18px;
+      line-height: 1.3;
       display: flex;
       align-items: center;
       text-align: center;
@@ -293,7 +294,7 @@
   right: 0px;
 
   width: 254px;
-  height: 100vh;
+  height: 100%;
   padding: 60px 21px;
 
   z-index: 17;
