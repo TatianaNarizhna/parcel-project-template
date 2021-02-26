@@ -371,6 +371,22 @@ body.modal-open {
   overflow: hidden;
 }
 
+#toTop {
+  width: 100px;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  text-align: center;
+  padding: 5px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  display: none;
+  color: #333;
+  font-family: verdana;
+  font-size: 11px;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -646,6 +662,14 @@ button#slick-slide-control02 {
   border-radius: 50%;
 }
 
+.slick-active button#slick-slide-control01,
+.slick-active button#slick-slide-control02 {
+  background-color: #d41342;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
 .products-section {
   padding-top: 127px;
   padding-bottom: 105px;
@@ -897,6 +921,14 @@ button#slick-slide-control02 {
   fill: #d41443;
 }
 
+@keyframes ice-cream-appearance {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 .hero-container {
   background-color: #ffb8ca;
 }
@@ -960,7 +992,6 @@ button#slick-slide-control02 {
   padding-bottom: 160px;
   background-color: #ffb8ca;
   margin: 0 auto;
-  z-index: 1;
   display: flex;
 }
 @media screen and (min-width: 1280px) {
@@ -982,7 +1013,7 @@ button#slick-slide-control02 {
   }
 }
 .hero-header-main {
-  width: 218px;
+  min-width: 218px;
   margin-top: 137px;
 }
 @media screen and (min-width: 768px) and (max-width: 1280px) {
@@ -1123,7 +1154,7 @@ button#slick-slide-control02 {
   .hero-link-him {
     font-family: DM Sans;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 1.3;
     display: flex;
     align-items: center;
     text-align: center;
@@ -1312,6 +1343,7 @@ button#slick-slide-control02 {
   left: 63%;
   z-index: 1;
   transform: translateX(-50%);
+  animation: ice-cream-appearance 1s linear 0 1 normal forwards;
 }
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   .hero-icecream-bg-picture {
@@ -1582,6 +1614,7 @@ button#slick-slide-control02 {
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 15px;
   color: #ffa5ba;
 }
 @media only screen and (max-width: 479px) {
@@ -1589,7 +1622,6 @@ button#slick-slide-control02 {
     font-size: 18px;
     line-height: 1.17;
     letter-spacing: 0px;
-    margin-bottom: 15px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -1606,7 +1638,7 @@ button#slick-slide-control02 {
   }
 }
 
-.about-title {
+.about_title {
   margin-top: 0;
   font-family: Titan One;
   text-align: center;
@@ -1614,7 +1646,7 @@ button#slick-slide-control02 {
   color: #d41443;
 }
 @media only screen and (max-width: 479px) {
-  .about-title {
+  .about_title {
     font-size: 34px;
     line-height: 1.15;
     letter-spacing: 0.04em;
@@ -1622,14 +1654,14 @@ button#slick-slide-control02 {
   }
 }
 @media only screen and (min-width: 768px) {
-  .about-title {
+  .about_title {
     font-size: 48px;
     letter-spacing: 0.04em;
     margin-bottom: 50px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .about-title {
+  .about_title {
     font-size: 58px;
     line-height: 1.14;
     letter-spacing: 0.06em;
@@ -1724,9 +1756,15 @@ button#slick-slide-control02 {
   font-size: 14px;
   line-height: 1.29;
   cursor: pointer;
+  box-shadow: 0px 1px 3px;
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .about-btn:hover, .about-btn:focus {
   background-color: #e5e5e5;
+}
+.about-btn:hover {
+  transform: translate(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 @media screen and (min-width: 768px) {
   .about-btn {
@@ -1740,6 +1778,27 @@ button#slick-slide-control02 {
   width: 5px;
   height: 8px;
   fill: #d41443;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.popup {
+  position: absolute;
+  display: block;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #fff5f6;
 }
 
 .advantages {
