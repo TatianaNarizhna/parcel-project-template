@@ -897,6 +897,10 @@ button#slick-slide-control02 {
   fill: #d41443;
 }
 
+.hero-container {
+  background-color: #ffb8ca;
+}
+
 .font-for-header {
   font-family: Titan One;
   font-size: 26px;
@@ -1173,7 +1177,7 @@ button#slick-slide-control02 {
 }
 
 .header-drop-menu {
-  position: absolute;
+  position: fixed;
   top: 0px;
   right: 0px;
   width: 254px;
