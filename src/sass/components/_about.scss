@@ -59,6 +59,10 @@
   text-transform: uppercase;
   margin-bottom: 15px;
   color: $pink-color;
+  &:hover {
+    transform: scale(1.2);
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+  }
 
   @media only screen and (max-width: 479px) {
     font-size: 18px;
@@ -82,6 +86,10 @@
   text-transform: uppercase;
 
   color: $red-color;
+  &:hover {
+    transform: scale(1.2);
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+  }
 
   @media only screen and (max-width: 479px) {
     font-size: 34px;
@@ -122,6 +130,9 @@
   line-height: 1.62;
 
   color: $title-color;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 .about-excerpt {
   margin-bottom: 47px;
@@ -131,6 +142,9 @@
   line-height: 1.62;
 
   color: $text-color;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 @media screen and(min-width: 768px) {
   .about-block {
@@ -180,9 +194,8 @@
   font-size: 14px;
   line-height: 1.29;
   cursor: pointer;
-  box-shadow: 0px 1px 3px;
   transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-  &:hover,
+
   &:focus {
     background-color: $bgc-primary-color;
   }
@@ -202,32 +215,72 @@
   fill: $red-color;
 }
 .overlay {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  display: none;
-
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // width: 100%;
-  // height: 100%;
-  // opacity: 1;
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  overflow-y: scroll;
 }
 
 .popup {
   position: absolute;
-  // z-index: 1;
-  display: block;
-  width: 500px;
+  z-index: 1;
+  margin: auto;
+  width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 40px;
   box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   background-color: $bgc-secondary-color;
+  @media screen and(min-width:600px) {
+    width: 500px;
+  }
+  & .about_title {
+    margin-bottom: 15px;
+  }
+}
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  &::before {
+    content: '';
+    background-color: $red-color;
+    position: absolute;
+    height: 1px;
+    width: 31px;
+    top: 11px;
+    left: -4px;
+    transform: rotate(-45deg);
+  }
+  &::after {
+    content: '';
+    background-color: $red-color;
+    position: absolute;
+    height: 1px;
+    width: 31px;
+    top: 11px;
+    left: -4px;
+    transform: rotate(45deg);
+  }
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+.text-popup {
+  text-indent: 35px;
+  line-height: 1.2;
 }
 .advantages {
   margin-left: auto;
@@ -243,6 +296,7 @@
 }
 .advantages-l {
   width: 230px;
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .advantages-title {
   margin-bottom: 15px;
@@ -251,6 +305,10 @@
   line-height: 1.14;
   letter-spacing: 0.04em;
   color: $red-color;
+  &:hover {
+    transform: scale(1.2);
+  }
+
   @media screen and(min-width: 768px) {
     font-size: 48px;
   }
@@ -265,10 +323,16 @@
   line-height: 1.62;
 
   color: $title-color;
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 .advantages-icon {
   margin-bottom: 16px;
   width: 50px;
   height: 50px;
   fill: $red-color;
+  &:hover {
+    transform: scale(1.2);
+  }
 }
