@@ -92,7 +92,7 @@
     }
 
     &-main {
-      min-width: 218px;
+      width: 218px;
       margin-top: 137px;
       @media screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
         width: 162px;
