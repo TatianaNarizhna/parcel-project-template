@@ -246,6 +246,15 @@
   }
 }
 
+.button-product:hover,
+.button-product:focus {
+  background-color:$red-color;
+
+  & .icon-arrow {
+    fill: $white-color;
+  }
+}
+
 .icon-arrow {
   width: 10px;
   height: 10px;
